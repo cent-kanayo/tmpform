@@ -65,6 +65,7 @@ p {
   background: #ffffff;
   color: #008000;
   transition: all 0.25s ease;
+  border: 2px solid #008000;
 }
 .form p {
   color: "#393939";
