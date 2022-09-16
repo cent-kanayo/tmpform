@@ -71,11 +71,17 @@ const Gift = () => {
               </p>
               <div className="flex-1">
                 <div className="flex flex-col gap-4">
-                  <input
-                    type="text"
-                    placeholder="e.g birthday, engagement e.t.c"
-                    className="bdGray outline-none px-4 py-4"
-                  />
+                  <select
+                    name=""
+                    id=""
+                    className="bdGray outline-none px-4 py-4 bg-white"
+                  >
+                    <option value="e.g birthday, engagement e.t.c">
+                      e.g birthday, engagement e.t.c
+                    </option>
+                    <option value="">marriage</option>
+                    <option value="">graduation</option>
+                  </select>
                   <input
                     type="text"
                     placeholder="Didn't find a purpose? input one here"
