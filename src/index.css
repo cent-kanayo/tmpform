@@ -1,13 +1,72 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bgGreen {
+  background: #11cb00;
+  mix-blend-mode: normal;
+  opacity: 0.68;
+  filter: blur(300px);
+  position: absolute;
+  width: 315px;
+  height: 297px;
+  left: 0px;
+  top: 0px;
+}
+
+.fw5 {
+  font-weight: 500;
+}
+
+.fw4 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #393939;
+}
+p {
+  letter-spacing: -3%;
+  line-height: 36px;
+  font-size: 1rem;
+  color: #817474;
+}
+@media (min-width: 786px) {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+.bdGray {
+  border: 1px solid #bfbfbf;
+  border-radius: 10px;
+}
+.btn {
+  background: #008000;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #008000;
+  transition: all 0.25s ease;
+}
+.form p {
+  color: "#393939";
+  font-size: "24px";
 }
