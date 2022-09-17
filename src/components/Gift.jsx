@@ -1,4 +1,38 @@
+import { useRef, useState } from "react";
+
+const select = [
+  "e.g birthday, engagement e.t.c",
+  "Birthdays",
+  "Engagements",
+  "Weddings",
+  "Anniversaries",
+  "Births",
+  "Graduations",
+  "Bar & Bar Mitzvahs",
+  "Retirement",
+  "Christmas",
+  "Easter",
+  "Valentines",
+  "Mothers Day",
+  "Fathers Day",
+  "Halloween",
+  "Love",
+  "Party",
+  "Thanksgiving",
+];
+
 const Gift = () => {
+  const [options, setOptions] = useState(select);
+  const [customSelect, setCustomSelect] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (customSelect) {
+      setOptions([customSelect, ...options]);
+    }
+    setCustomSelect("");
+  };
+
   return (
     <div className="container mx-auto">
       <h1 className="text-center mb-12">GIFT TREE</h1>
@@ -14,7 +48,7 @@ const Gift = () => {
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/4"></div>
         <div className="flex-1">
-          <form className="form flex flex-col mb-12">
+          <form className="form flex flex-col mb-12" onSubmit={handleSubmit}>
             <div className="flex flex-col mb-12 md:flex-row">
               <p
                 className="w-1/5"
@@ -76,16 +110,20 @@ const Gift = () => {
                     id=""
                     className="bdGray outline-none px-4 py-4 bg-white"
                   >
-                    <option value="e.g birthday, engagement e.t.c">
-                      e.g birthday, engagement e.t.c
-                    </option>
-                    <option value="">marriage</option>
-                    <option value="">graduation</option>
+                    {options.map((item, index) => {
+                      return (
+                        <option value={item} key={index}>
+                          {item}
+                        </option>
+                      );
+                    })}
                   </select>
                   <input
                     type="text"
+                    value={customSelect}
                     placeholder="Didn't find a purpose? input one here"
                     className="bdGray outline-none px-4 py-4"
+                    onChange={(e) => setCustomSelect(e.target.value)}
                   />
                 </div>
               </div>
